@@ -7,13 +7,18 @@ import { IndexComponent } from './index/index.component';
 //Reactive forms
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { UserDataServerService } from './user-data-server.service';
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
-  declarations: [AddComponent, ListComponent, IndexComponent]
+  declarations: [AddComponent, ListComponent, IndexComponent],
+  providers:[UserDataServerService]
 })
 export class UsersModule { }

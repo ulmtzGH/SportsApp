@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UserDataServerService } from '../user-data-server.service';
+import { User } from '../user';
+
 @Component({
   selector: 'user-list',
   templateUrl: './list.component.html',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserDataServerService) { }
 
   ngOnInit() {
+    this.userService.loadCustomers();
   }
+
+  getGenderOptions() {
+    return [
+      "Female",
+      "Male"
+    ]
+  };
 
 }

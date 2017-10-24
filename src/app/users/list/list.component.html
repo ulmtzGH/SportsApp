@@ -1,3 +1,47 @@
-<p>
-  list works!
-</p>
+<div style="text-align:center">
+  <h1>
+    Modulo Usuarios
+  </h1>
+</div>
+<table border="1">
+  <tr>
+    <td>Name</td>
+    <td>Address</td>
+    <td>Stratum</td>
+    <td>Gender</td>
+  </tr>
+  <tr *ngFor="let user of userService.usersList">
+    <td>{{user.Name}}</td>
+    <td>{{user.Address}}</td>
+    <td>{{user.Rol}}</td>
+    <td>{{getGenderOptions()[user.Gender]}}</td>
+  </tr>
+</table>
+<br/>
+
+<!-- <div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef> Gender </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.gender}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="rol">
+      <mat-header-cell *matHeaderCellDef> rol </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.rol}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div> -->
+
+<!-- <div id="details-container">
+  <p *ngFor="let item of getGroups() | async">{{item.message}}</p>
+</div> -->

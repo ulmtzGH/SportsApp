@@ -3,6 +3,10 @@ import { Component, OnInit } from '@angular/core';
 //Funciones Forms
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+//Backend
+import { User } from '../user';
+import { UserDataServerService } from '../user-data-server.service';
+
 @Component({
   selector: 'user-add',
   templateUrl: './add.component.html',
@@ -17,9 +21,9 @@ export class AddComponent implements OnInit {
   name:string = '';
   titleAlert:string = 'This field is required';
 
-  //public user:User;
+  public user:User;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userService:UserDataServerService,) {
     this.rForm = fb.group({
       'name' : [null, Validators.required],
       'description' : [null, Validators.compose([
@@ -34,8 +38,8 @@ export class AddComponent implements OnInit {
     this.description = post.description;
     this.name = post.name;
 
-    // this.user = new User(post.name,post.description, post.validate + 2, post.validate + 1);
-    // this.userService.saveCustomer(this.user);
+    this.user = new User(post.name,post.description, post.validate + 1, post.validate + 0);
+    this.userService.saveCustomer(this.user);
   }
 
   ngOnInit() {
