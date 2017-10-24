@@ -1,0 +1,48 @@
+<h1>
+        Nuevo Usuario
+      </h1>
+      
+      <form #addForm="ngForm">
+          <mat-form-field>
+              <input matInput placeholder="Name" required [(ngModel)]="user.name" name="name" #name="ngModel" />
+              <mat-error *ngIf="!name.valid && !name.pristine">
+                Please enter a valid name
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Address" required [(ngModel)]="user.address" name="address" #address="ngModel" />
+              </mat-form-field>
+              <mat-error *ngIf="!address.valid && !address.pristine">
+                Please enter a valid address
+              </mat-error>
+              <mat-select placeholder="Rol" required [(ngModel)]="user.rol" name="rol" #rol="ngModel">
+                  <mat-option *ngFor="let stratum of stratumList" [value]="stratum.value">
+                    {{ stratum.label }}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="!rol.valid">
+                  Please enter a valid stratum
+                </mat-error>
+                <br>
+                <br>
+                <mat-radio-group required class="user-radio-group" [(ngModel)]="user.gender" name="gender" #gender="ngModel">
+                    <mat-radio-button required class="user-radio-button" *ngFor="let genderOption of genderOptionsList" [value]="genderOption.value">
+                      {{genderOption.label}}
+                    </mat-radio-button>
+                  </mat-radio-group>
+                  <mat-error *ngIf="!gender.valid">
+                    Please enter a valid gender
+                  </mat-error>
+                  <br/>
+                  <br>
+                  <div class="button-row">
+                    <button style="margin-right:10px;" mat-raised-button color="primary" (click)="onNewCustomer()">
+                      New
+                    </button>
+        
+                    <button mat-raised-button color="primary" [disabled]="!addForm.valid" (click)="onSaveCustomer()">
+                      Save
+                    </button>
+                  </div>
+          
+        </form>
