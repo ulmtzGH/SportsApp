@@ -10,7 +10,8 @@
     <td>Stratum</td>
     <td>Gender</td>
   </tr>
-  <tr *ngFor="let user of userService.usersList">
+  <!-- <tr *ngFor="let user of userService.usersList"> -->
+      <tr *ngFor="let user of userListLocal">
     <td>{{user.Name}}</td>
     <td>{{user.Address}}</td>
     <td>{{user.Rol}}</td>

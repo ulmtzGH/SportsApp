@@ -8,10 +8,19 @@
                 <input type="text" formControlName="name">
               </label>
               <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{titleAlert}}</div>
-              <label>Description
+              <label>Address
                 <textarea  formControlName="description"></textarea>
               </label>
               <div class="alert" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">You must specify a description that's between 3 and 5 characters.</div>
+              <br>
+                <input type="checkbox" name="rol" formControlName="rol" value="1"> Rol
+                <br>
+              <label>Male
+                <input type="radio" name="gender" formControlName="gender" [value]=1>
+              </label>
+              <label>Female
+                <input type="radio" name="gender" formControlName="gender" [value]=0>
+              </label>
               <br>
               <input type="checkbox" name="validate" formControlName="validate" value="1"> On
               
@@ -27,6 +36,8 @@
               <h1>User Added</h1>
               <h2>{{ name }}</h2>
               <p>{{ description }}</p>
+              <input type="button" class="button" value="New User" (click)="name=''">
+              <!-- <input type="button" class="button" value="New User" (click)="clearForm()"> -->
           </div>
         </div>
       </ng-template>

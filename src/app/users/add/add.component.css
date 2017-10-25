@@ -1,4 +1,4 @@
-.form-container {
+/* .form-container {
     display:block;
     width:90%;
     padding:2em;
@@ -34,4 +34,16 @@ h1 {
         opacity:1;
         transform: translateY(0);
     }
+} */
+
+.mat-input-container{
+    display: block;
+    width: auto;
+}
+
+.contaiber-formMaterial{
+    margin-left: 70px;
+    margin-right: 70px;
+    background-color: white;
+    padding: 30px;
 }

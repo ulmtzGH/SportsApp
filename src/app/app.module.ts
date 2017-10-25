@@ -45,6 +45,17 @@ const appRoutes: Routes = [
     UsersModule,
     SportsModule,
 
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatTableModule,
+     MatToolbarModule,
+
     RouterModule.forRoot(
       appRoutes
     )
